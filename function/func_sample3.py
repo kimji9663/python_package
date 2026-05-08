@@ -79,8 +79,22 @@ def func_default_param():
 # func_default_param end --------------------
 
 
+# 재귀 호출 함수(Recursive Call Function)
+# 함수 안에서 자신을 실행하는 함수(반복문과 유사함)
+# 주의 : 무한 루프가 되지 않도록 종료 조건을 반드시 기술해야 함
+# 파이썬은 무한 루프에 빠지면 자동으로 일정 구간 반복 후에 에러 발생 시킴
+def fectorial(n):
+    print(n, '*', end='')
+    if n == 0:
+        return 1
+    else:
+        return n * fectorial(n-1)  # 자기 안에서 자기를 실행
+# factorial end -----------------------------
+
+
 if __name__ == '__main__':
     # func_callby_value()
     # func_callby_reference()
-    func_default_param()
+    # func_default_param()
+    print('\n 10!:', fectorial(10))
 
